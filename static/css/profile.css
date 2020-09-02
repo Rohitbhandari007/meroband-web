@@ -1,0 +1,52 @@
+.profile-container {
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+
+}
+.image-container {
+    flex:1;
+    display: flex;
+
+}
+.username-container{
+    margin-left:2% ;
+}
+.image-container img {
+    height: 50%;
+    width: 15%;
+    border:1px solid rgb(216, 210, 210);
+    border-style: groove;
+}
+.details-container {
+    flex:4;
+    display: flex;
+    margin: 0 -5px;
+    border-bottom-style: groove;
+   
+
+}
+.edit_button{
+    flex: 4;
+    margin-left: 1%;
+ 
+}
+.edit_button button{
+    margin-left: 2%;
+    margin-top: 1%;
+    padding:2px 8px;
+}
+.followers_container{
+     margin: 0 5px;
+
+}   
+.following_container{
+   margin: 0 5px;
+
+}
+.views{
+  margin: 0 5px;
+
+}

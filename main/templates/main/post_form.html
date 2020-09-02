@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<form method="POST" >
+    {% csrf_token %}
+
+    <input type="text" name="content">
+    <input type="file" name="videos">
+    <button type="submit">Post</button>
+</form>
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endblock content %}

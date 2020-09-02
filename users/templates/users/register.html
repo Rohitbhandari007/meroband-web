@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" style="width:500px;margin:auto;">
+    {% csrf_token %}
+    <label for="first_name">First Name</label>
+    <input class="form-control" type="text" placeholder="first name" name = "first_name" > <br>
+    <label for="last_name">First Name</label>
+    <input class="form-control"type="text" placeholder="last name" name = "last_name" > <br>
+    <label for="email">Email</label>
+    <input class="form-control"type="email" placeholder="email" name = "email" > <br>
+    <label for="Username">Username</label>
+    <input class="form-control"type="text" placeholder="username" name = "username" > <br>
+    <label for="password1">Password</label>
+    <input class="form-control"type="password" placeholder="password" name = "password1" > <br>
+    <label for="password2">Confirm password</label>
+    <input class="form-control"type="text" placeholder="confirm password" name = "password2" > <br>
+    <button type="submit">Submit</button></br>
+    <a href="{% url 'login' %}">Already have an account ?</a>
+</form>
+
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endblock content %}

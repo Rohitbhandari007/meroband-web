@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    {% for post in posts%}
+    <h1>{{ post.content }}</h1>
+    <p>{{ post.author}}</p>
+     <div class="video-container">
+            <div class="c-video">
+                <video class="video" src="{{ post.videos.url }}"> </video>
+                <div class="controls">
+                    <div class="orange-bar">
+                        <div class="orange-juice">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,300 @@
+
+@import url("https://fonts.googleapis.com/css?family=Exo:400,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Teko:400,600&display=swap");
+:root {
+  --player-background: #080808;
+  --player-foreGround: #7f00b1;
+  --player-controls: #ffffff;
+  --hover-color: #000000;
+  --font-family: 'Exo', sans-serif;
+}
+.video-container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+
+  .video-player {
+    max-height: 400px;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: var(--font-family);
+    background-color: #000000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    
+  }
+  
+  .video-player video {
+    max-width: 100%;
+  }
+  
+  .video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: var(--player-background);
+    z-index: 2;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  
+  .video-controls .icon {
+    position: absolute;
+  }
+  
+  .video-controls .seekbar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--player-controls);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .video-controls .seekbar .progress {
+    background-color: var(--player-foreGround);
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+  }
+  
+  .video-controls .control-btn {
+    padding: 0;
+    height: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    width: 40px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 0;
+    background-color: transparent;
+    color: var(--player-controls);
+    outline: 0;
+    cursor: pointer;
+  }
+  
+  .video-controls .control-btn:hover {
+    color: var(--player-foreGround);
+    background-color: var(--hover-color);
+  }
+  
+  .video-controls .video-playback-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .video-controls .toggle-play-pause.play .pause-icon {
+    display: none;
+  }
+  
+  .video-controls .toggle-play-pause.pause .play-icon {
+    display: none;
+  }
+  
+  .video-controls .toggle-volume.on .volume-off {
+    display: none;
+  }
+  
+  .video-controls .toggle-volume.off .volume-on {
+    display: none;
+  }
+  
+  .video-controls .video-volume-control {
+    width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: 4px;
+  }
+  
+  .video-controls .video-timings {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: var(--player-controls);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: auto;
+    padding: 0 4px;
+  }
+  
+  .video-controls .video-timings .time {
+    width: 70px;
+    text-align: center;
+  }
+  
+  .video-player.hide-controls .video-topbar {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  
+  .video-player.hide-controls .video-controls {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  
+  .video-container {
+    flex:1;
+    width: 100%;
+    padding-top: 40px;
+    height: calc(100% - 40px);
+  }
+  
+  .top-info {
+    font-family: 'Teko', sans-serif;
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 6px;
+    text-align: center;
+    background-color: #272d2d;
+    color: #ffffff;
+  }
+  .big-post-container{
+    width: 100%;
+    margin:auto;
+    height: 100%;
+    display: flex;
+    background:#fdf7ff;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+  }
+  .post-breaker{
+      height:5%;
+  }
+  .post-container{
+    flex:1;
+    width: 45%;
+    margin-left:10%;
+    height: 100%;
+    background:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border:1px solid rgb(216, 210, 210);    
+  }
+  .post {
+      width: 100%;
+      margin:auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+  }
+  .context-container {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+
+}
+.title-container{
+  flex: 1;
+  display: flex;
+  border-width:1px;  
+  border-bottom-style: groove;
+  border-bottom-color: rgb(255, 255, 255);
+
+}
+.username-container{
+  max-height: 20%;
+  margin-top: 2%;
+  flex:10;
+  display:flex;
+}
+.username-text{
+  margin-bottom:2%;
+  font-weight: bold;
+  color:black;
+  text-decoration:none;
+
+}
+.title-container a{
+    text-decoration:none;
+}
+.user-image-container{
+  flex:1;
+  display:flex;
+
+}
+.user-image-container img{
+  max-height:50px;
+  margin:5%;
+  max-width:45px;
+  border:1px solid rgb(216, 210, 210);    
+  border-radius:50px;
+
+}
+.caption-container{
+  flex: 1;
+  margin-left:2%;
+  font-size:14px;
+}
+  .comment-section{
+      flex:1;
+      display: flex;
+  }
+  .comment-text{
+    flex:1;
+    height: 100%;
+  }
+  .comment-text input{
+    width: 100%;
+    height: 100%;
+    padding:12px 20px;
+  }
+  .comment-text input:focus{
+    outline: none;
+  }
+
+  /*# sourceMappingURL=style.css.map */

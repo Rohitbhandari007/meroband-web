@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+    {{ form.as_p }}
+    {{ p_pic }}
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+{% endblock content %}

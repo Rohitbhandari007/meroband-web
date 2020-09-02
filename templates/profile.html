@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<div class="profile-container">
+  <div class="image-container">
+    <img src="{{ user.profile.image.url }}">
+    <div class="username-container">
+      <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+      <p>@{{ user.username }}</p>
+    </div>
+  </div>
+  <div class="details-container">
+    <div class="edit_button">
+      <a href="{% url 'edit-profile' %}"> <img src="{% static 'images/icons/edit.png' %}"></a>
+    </div>
+    <div class="followers_container">
+      <p1>100</p1><br>
+      <p>Followers</p>
+    </div>
+    <div class="following_container"> 
+      <p1>100</p1><br>
+      <p>Following </p>
+    </div>
+    <div class="views">
+      <p1>100</p1><br>
+      <p>Views</p>
+    </div>
+  </div>
+</div>
+<div class="user-posts">{{ user.post.content }}</div>
+<!--<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ user.profile.image.url }}" alt="Card image cap">
+  <div class="card-body">
+      <p class="card-title">{{ user.first_name }} {{ user.last_name }}</p>
+      <a class="text-secondary">{{ user.email }}</a>
+  </div>
+</div>
+<a href="{% url 'edit-profile' %}">Edit</a>-->
+
+{% endblock content %}

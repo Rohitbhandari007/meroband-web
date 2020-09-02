@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<body>
+<div class="big-post-container">
+{% for post in posts %}
+    <div class="post-breaker">
+        <br>
+
+    </div>
+    <div class="post-container">
+        <div class="post">
+            <div class="context-container">
+                <div class="title-container">
+
+                    <div class="user-image-container">
+                        <img src="{{ post.author.profile.image.url }}">
+                    </div>
+                    <div class="username-container">
+                       <a class="username-text" href="#">{{ post.author}}</a>
+                    </div>
+                    <a href="{% url 'post-detail' post.id %}">More</a>
+                </div>
+                <div class="caption-container" >{{ post.content }}</div>
+            </div>
+            {% if post.videos == "none" %}
+            {% else %}
+                <div class="video-container">
+                    <div class="video-player">  
+                    <video
+                        src="{{ post.videos.url }}"></video>
+                    <div class="video-controls">
+                        <div class="video-top-controls">
+                        <div class="video-seekbar seekbar">
+                            <span class="progress"></span>
+                        </div>
+                        </div>
+                
+                        <div class="video-playback-controls">
+                        <button class="control-btn toggle-play-pause play">
+                            <i class="fas fa-play play-icon icon"></i>
+                            <i class="fas fa-pause pause-icon icon"></i>
+                        </button>
+                        <div class="video-volume-control">
+                            <button class="control-btn toggle-volume on">
+                            <i class="fas fa-volume-up icon volume-on"></i>
+                            <i class="fas fa-volume-mute icon volume-off"></i>
+                            </button>
+                            <div class="volume-seekbar seekbar">
+                            <span class="progress"></span>
+                            </div>
+                        </div>
+                        <div class="video-timings">
+                            <div class="start-time time">00:00:00</div>
+                            <div class="end-time time">00:00:00</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="comment-section">
+            <div class="comment-text">
+                <input type="text" placeholder="Comment...">
+            </div>  
+        </div>
+    </div>
+{% endfor %}
+</div>
+</body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock content %}

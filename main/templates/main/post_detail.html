@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="post-container">
+        <div class="post">
+            <div class="context-container">
+                <div class="title-container">
+                    <div class="user-image-container">
+                        <img src="{{ object.author.profile.image.url }}">
+                    </div>
+                    <div class="username-container">
+                       <a class="username-text" href="#">{{ object.author}}</a>
+                    </div>
+                </div>
+                <div class="caption-container">{{ object.content }}</div>
+            </div>
+            {% if object.videos == "none" %}
+            {% else %}
+                <div class="video-container">
+                    <div class="video-player">
+                    <video
+                        src="{{ object.videos.url }}"></video>
+                    <div class="video-controls">
+                        <div class="video-top-controls">
+                        <div class="video-seekbar seekbar">
+                            <span class="progress"></span>
+                        </div>
+                        </div>
+
+                        <div class="video-playback-controls">
+                        <button class="control-btn toggle-play-pause play">
+                            <i class="fas fa-play play-icon icon"></i>
+                            <i class="fas fa-pause pause-icon icon"></i>
+                        </button>
+                        <div class="video-volume-control">
+                            <button class="control-btn toggle-volume on">
+                            <i class="fas fa-volume-up icon volume-on"></i>
+                            <i class="fas fa-volume-mute icon volume-off"></i>
+                            </button>
+                            <div class="volume-seekbar seekbar">
+                            <span class="progress"></span>
+                            </div>
+                        </div>
+                        <div class="video-timings">
+                            <div class="start-time time">00:00:00</div>
+                            <div class="end-time time">00:00:00</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="comment-section">
+            <div class="comment-text">
+                <input type="text" placeholder="Comment...">
+            </div>
+        </div>
+    </div>
+{% if object.author == user %}
+    <a href="{% url 'post-update' object.id %}">Edit</a>
+    <a href="{% url 'post-delete' object.id %}">Delete</a>
+
+{% endif %}
+{% endblock content %}
