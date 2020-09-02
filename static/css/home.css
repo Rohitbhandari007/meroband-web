@@ -24,6 +24,7 @@
 
   .video-player {
     max-height: 400px;
+    
     max-width: 800px;
     width: 100%;
     overflow: hidden;
@@ -44,6 +45,7 @@
   
   .video-player video {
     max-width: 100%;
+    font: black;
   }
   
   .video-controls {
